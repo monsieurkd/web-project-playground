@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Event description</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://kit.fontawesome.com/4cf720d27e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app" class="body-container">
+        <div class="page-header">
+            <h1>
+                {{name}}
+            </h1>
+        </div>   
+        <hr>
+        <div id="display-event">
+            <div class="container"> 
+                <div class="container-header">
+                    <div class="header-content"> 
+                        <h2>Activities details</h2>
+                        <div class="buttons"> 
+                            <button type="button" onclick="">Change details</button>
+                            <button type="button" onclick="">See participates</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-body">
+                    <p>{{description}}</p>
+                    <p>Date: {{date}}</p>
+                    <p>Location: {{location}}</p>
+                </div>
+            </div>
+            <div class="container"> 
+                <div class="container-header">
+                    <div class="header-content"> 
+                        <h2>Comment</h2>
+                    </div>
+                </div>
+                <div class="container-body">
+                    <p id="comment-para">Post a comment</p>  
+                    <form class="comment-form">
+                        <input type="text" placeholder="Title">
+                        <textarea rows="10" placeholder="Your comment"></textarea>
+                        <br>
+                        <button type="button" onclick="">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="javascripts/description_page.js"></script>
+</body>
+</html>

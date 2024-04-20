@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Manager-page</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://kit.fontawesome.com/4cf720d27e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="manager-page" class="body-container">
+        <div v-if="showPopUp" class="popupbox-event" @click.self="showPopUp = false">
+            <div class="popup-box-content">
+                <div class="container"> 
+                    <div class="container-header">
+                        <div class="header-content"> 
+                            <h2>Create event</h2>
+                            <div class="close"  @click="showPopUp = false">
+                                <i id="close-icon" class="fa-solid fa-xmark"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="popup-container" class="container-body">
+                        <form @submit.prevent="submitForm">
+                            <p>Name</p>
+                            <input type="text" name="Name" v-model="form.name" placeholder="Enter event name">
+                            <p>Location</p>
+                            <input type="text" name="Location" v-model="form.location" placeholder="Enter event location">
+                            <p>Date</p>
+                            <input type="date" name="Date" v-model="form.date" placeholder="Enter event date">
+                            <p>Description</p>
+                            <textarea rows="10" name="Description" v-model="form.description" placeholder="Enter event description"></textarea>
+                            <br>
+                            <div class="buttons">
+                                <button type="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="container-footer">
+                        <div class="buttons">
+                            <button id="closePopup" @click="showPopUp = false">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-header">
+            <h1>
+                Youx Organisation
+            </h1>
+        </div>
+        <hr>
+        <div class="container">
+            <div class="container-header">
+                <div class="header-content"> 
+                    <h2>Events</h2>
+                    <div class="buttons"> 
+                        <button type="submit" @click="popup()">Create event</button>
+                        <button type="submit" @click="">Delete event</button>
+                    </div>
+                </div>
+            </div>
+            <div class="container-body">
+                <div  id="list-table">
+                    <table id="table">
+                        <thead>
+                            <tr>
+                                <th>Event Name</th>
+                                <th>Number of participates</th>
+                                <th>Date</th>
+                                <th>Location</th>
+                            </tr>
+                        </thead>
+                        <tbody v-for="event in events" :key="event.EventID" @click="directEvent(event)">
+                            <td> {{event.name}} </td>
+                            <td> {{event.number}} </td>
+                            <td> {{event.date}} </td>
+                            <td> {{event.location}} </td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="left-container" class="container"> 
+            <div class="container-header">
+                <div class="header-content"> 
+                    <h2>Announcement</h2>
+                </div>
+            </div>
+            <div class="container-body">
+                <p>New Announcement !</p>
+                <p>New Announcement !</p>
+                <p>New Announcement !</p>
+                <p>New Announcement !</p>
+            </div>
+        </div>
+        <div id="right-container" class="container"> 
+            <div class="container-header">
+                <div class="header-content"> 
+                    <h2>Members</h2>
+                </div>
+            </div>
+            <div class="container-body">
+                <p>Duc Nam Khanh Le</p>
+                <p>Minh Duc Kieu</p>
+                <p>Thi Phuong Thao Truong</p>
+                <p>Khoi Lu</p>
+            </div>
+        </div>
+        </div>
+    </div>
+    <script src="javascripts/manager_page.js"></script>
+</body>
+</html>

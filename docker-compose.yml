@@ -1,0 +1,33 @@
+version: '3'
+services:
+  web:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/usr/src/app
+      - '/app/node_modules'
+    command: nodemon -L --polling-interval 1000 app.js
+    ports: 
+      - "3000:3000"
+    depends_on:
+      - db
+    networks:
+      - my-network
+  db:
+    image: "mysql"
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/data
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
+
+volumes:
+  db-data:
