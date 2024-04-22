@@ -1,0 +1,35 @@
+{
+  "name": "Node.js & MySQL Development",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "web",
+  "workspaceFolder": "/usr/src/app",
+
+  // Set the environment variables necessary for your application
+  "containerEnv": {
+      "MYSQL_ROOT_PASSWORD": "password",
+      "NODE_ENV": "development"
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/usr/src/app,type=bind,consistency=cached",
+    "source=node_modules,target=/usr/src/app/node_modules,type=volume"
+  ],
+  // Ports to forward
+  "forwardPorts": [
+      3000, // Node.js application port
+      3306  // MySQL database port (optional, only if needed for local tools)
+  ],
+
+  // Extensions to install inside the container
+  "extensions": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode"  
+  ],
+
+  // Commands to run after creating the container
+  "postCreateCommand": "npm install",
+  "containerEnv": {
+    "NODE_ENV": "development"
+  },
+  // Shut down action to stop the entire composition when closing the project
+  "shutdownAction": "stopCompose"
+}

@@ -6,8 +6,13 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/usr/src/app
-      - '/app/node_modules'
-    command: nodemon -L --polling-interval 1000 app.js
+      - ./node_modules:/usr/src/app/node_modules
+    environment:
+      - DATABASE_URL=mysql://root:password@db/
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASSWORD=password
+    command: tail -f /dev/null
     ports: 
       - "3000:3000"
     depends_on:

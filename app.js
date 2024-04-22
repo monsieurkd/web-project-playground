@@ -28,6 +28,7 @@ app.use('/', indexRouter);
 //   res.send('Hello World!')
 // })
 app.use('/users', usersRouter);
+app.use(express.json()); // This line is crucial
 
 // Create a connection object
 const connection = mysql.createConnection({
@@ -59,7 +60,7 @@ app.get('/api/read/events', (req, res) => {
 
 app.post('/api/create/events', (req, res) => {
   const data = req.body;
-  console.log(req);
+  console.log(req.body);
   const sql = "INSERT INTO event (name, location, date, description) VALUES (?, ?, ?, ?)";
   connection.query(sql, [data.name, data.location, data.date, data.description], (error, results, fields) => {
     if (error) throw res.send(res.body);
