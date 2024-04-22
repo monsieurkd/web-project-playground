@@ -1,8 +1,9 @@
 # Use the official Node.js 14 image as a base
-FROM node:14
+FROM node:latest
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
+
 
 # Install MySQL client
 RUN apt-get update && \
@@ -15,9 +16,6 @@ RUN npm install mysql2
 RUN npm install cors
 RUN npm install sql-client
 RUN npm install mysql
-
-# Copy package.json and package-lock.json into the working directory
-COPY package*.json ./
 
 # Install dependencies
 RUN npm install
