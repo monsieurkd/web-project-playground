@@ -11,6 +11,7 @@ var usersRouter = require('./routes/users');
 const cors = require('cors');
 
 var app = express();
+
 app.use(cors());
 // view engine setup
 app.set('view engine', 'ejs');
