@@ -14,6 +14,9 @@ router.get('/event-description.html', function(req,res,next){
   res.render('description', {title: 'manager'});
 });
 
+router.get('/login.html', function(req,res,next){
+  res.render('description', {title: 'manager'});
+});
 
 
 module.exports = router;
