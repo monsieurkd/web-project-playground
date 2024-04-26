@@ -70,6 +70,21 @@ app.post('/api/create/events', (req, res) => {
 });
 
 
+app.get('/api/get/user', async (req, res) => {
+  try {
+    const [rows] = connection.query('SELECT email, password, phonenumber, role FROM users WHERE id = ?', [1]);
+    if (rows.length === 1) {
+      const user = rows[0];
+      res.json(user);
+    } else {
+      res.status(404).json({ error: 'User not found' });
+    }
+  } catch (error) {
+    console.error('Error fetching user data:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 
 
 app.listen(3000, () => {
