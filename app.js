@@ -51,7 +51,7 @@ connection.connect(error => {
 });
 
 app.get('/api/read/events', (req, res) => {
-  connection.query(`SELECT * FROM event`, (error, results) => { 
+  connection.query(`SELECT * FROM Event`, (error, results) => { 
     if (error) {
       return res.status(500).send(error);
     }
@@ -63,7 +63,7 @@ app.post('/api/create/events', (req, res) => {
   const data = req.body;
   console.log(req.body);
   const sql = "INSERT INTO event (name, location, date, description) VALUES (?, ?, ?, ?)";
-  connection.query(sql, [data.name, data.location, data.date, data.description], (error, results, fields) => {
+  connection.query(sql, [data.Name, data.Location, data.Date, data.Description], (error, results, fields) => {
     if (error) throw res.send(res.body);
     res.send('Data inserted');
   });
@@ -72,7 +72,7 @@ app.post('/api/create/events', (req, res) => {
 
 app.get('/api/get/user', async (req, res) => {
   try {
-    connection.query(`SELECT * FROM users`, (error, results) => { 
+    connection.query(`SELECT * FROM USER`, (error, results) => { 
       if (error) {
         return res.status(500).send(error);
       }
