@@ -60,3 +60,20 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2024-04-21  8:51:47
+
+
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  email VARCHAR(100),
+  password VARCHAR(100),
+  phonenumber VARCHAR(20),
+  role ENUM('volunteer', 'manager')
+);
+
+
+INSERT INTO users (first_name, last_name, email, password, phonenumber, role) VALUES
+('John', 'Doe', 'john.doe@example.com', 'password123', '1234567890', 'volunteer'),
+('Jane', 'Smith', 'jane.smith@example.com', 'password456', '9876543210', 'manager'),
+('Alice', 'Johnson', 'alice.johnson@example.com', 'password789', '5551234567', 'volunteer');

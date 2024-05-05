@@ -101,7 +101,6 @@ var appdiv = new Vue({
           if (xhttp.readyState == 4 && xhttp.status == 200) {
               var data = JSON.parse(xhttp.responseText);
               console.log(data[0]["EventID"]);
-              const table = document.getElementById('table');
               this.events = data;
               console.log(this.events);
           }
