@@ -15,11 +15,11 @@ router.get('/event-description.html', function(req,res,next){
 });
 
 router.get('/login.html', function(req,res,next){
-  res.render('description', {title: 'manager'});
+  res.render('description', {title: 'login'});
 });
 
 router.get('/profile.html', function(req,res,next){
-  res.render('description', {title: 'manager'});
+  res.render('description', {title: 'description'});
 });
 
 
