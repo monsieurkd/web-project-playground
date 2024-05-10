@@ -76,6 +76,9 @@
 // xhttp.send();
 
 
+
+
+
 var appdiv = new Vue({
   el: "#manager-page",
   data: {
@@ -149,3 +152,17 @@ var appdiv = new Vue({
     }
   }
 });
+
+window.onload = function () {
+  var app = new Vue({
+    el: "#mydiv",
+    data: {
+      clicked: false
+    },
+    methods: {
+      toggleDropdown() {
+        this.clicked = !this.clicked;
+      }
+    }
+  });
+}
