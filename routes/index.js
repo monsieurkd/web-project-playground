@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/manager.html', function(req,res,next){
-  res.render('manager', {title: 'manager'});
+  res.render('home', {title: 'manager'});
 });
 
 router.get('/event-description.html', function(req,res,next){
