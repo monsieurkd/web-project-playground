@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mysql = require('mysql2');
+const session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -25,11 +26,14 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-// app.get('/', (req, res) => {
-//   res.send('Hello World!')
-// })
 app.use('/users', usersRouter);
 app.use(express.json()); // This line is crucial
+
+// app.use(session({
+//   secret: process.env.SESSION_SECRET, 
+//   resave: false,
+//   saveUninitialized: true
+// }));
 
 // Create a connection object
 const connection = mysql.createConnection({
@@ -58,6 +62,16 @@ app.get('/api/read/events', (req, res) => {
     res.json(results);
   });
 });
+
+app.get('/api/read/users', (req, res) => {
+  connection.query(`SELECT * FROM User`, (error, results) => { 
+    if (error) {
+      return res.status(500).send(error);
+    }
+    res.json(results);
+  });
+});
+
 
 app.post('/api/create/events', (req, res) => {
   const data = req.body;

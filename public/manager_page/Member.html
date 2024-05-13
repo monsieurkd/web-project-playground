@@ -58,39 +58,38 @@
         </div>    
     </div>    
     <div id="manager-page" class="body-container">
-        <div class="event-search-container">
-            <i class="fa-solid fa-magnifying-glass event-search-icon"></i>
-            <input type="text" placeholder="Search for member" class="event-search-input">
-            <i class="fa-solid fa-magnifying-glass event-search-btn"></i>
+        <div class="member-header">
+            <h1>Member</h1>
+            <div class="search-and-invite">
+                <div class="member-searchbar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search by name or email">
+                </div>
+                <button class="invite-button">Add Member +</button>
+            </div>
         </div>
-        <div class="filters">
-            <select class="filter-dropdown">
-                <option value="" disabled selected>Roles</option>
-                <option value="">Manager</option>
-                <option value="">Member</option>
-            </select>   
-        </div>
-        <hr>
-        <div id="list-table">
-            <table id="table">
-                <thead>
-                    <tr>
-                        <th>Event Name</th>
-                        <th>Number of participates</th>
-                        <th>Date</th>
-                        <th>Location</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="event in events" :key="event.EventID" @click="directEvent(event)">
-                        <td> {{event.Name}} </td>
-                        <td> {{event.Participant}} </td>
-                        <td> {{event.Date}} </td>
-                        <td> {{event.Location}} </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <table class="member-table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Roles</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="user in users" :key="user.User_ID" @click="directUser(user)">
+                    <td> {{user.Username}} </td>
+                    <td> <span>{{user.First_name}} {{user.Last_name}} </span>  </td>
+                    <td> {{user.Email}}</td>
+                    <td>
+                        <span class="role member">Member</span>
+                    </td>
+                    <td><button class="edit-button"><i class="fa-solid fa-pencil"></i></button> <button class="more-button"><i class="fa-solid fa-trash"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <script src="https://kit.fontawesome.com/4cf720d27e.js" crossorigin="anonymous"></script>
     <script src="../javascripts/manager_js/member.js"></script>
