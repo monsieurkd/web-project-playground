@@ -58,7 +58,39 @@
         </div>    
     </div>    
     <div id="manager-page" class="body-container">
+        <div class="event-search-container">
+            <i class="fa-solid fa-magnifying-glass event-search-icon"></i>
+            <input type="text" placeholder="Search for member" class="event-search-input">
+            <i class="fa-solid fa-magnifying-glass event-search-btn"></i>
+        </div>
+        <div class="filters">
+            <select class="filter-dropdown">
+                <option value="" disabled selected>Roles</option>
+                <option value="">Manager</option>
+                <option value="">Member</option>
+            </select>   
+        </div>
         <hr>
+        <div id="list-table">
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>Event Name</th>
+                        <th>Number of participates</th>
+                        <th>Date</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="event in events" :key="event.EventID" @click="directEvent(event)">
+                        <td> {{event.Name}} </td>
+                        <td> {{event.Participant}} </td>
+                        <td> {{event.Date}} </td>
+                        <td> {{event.Location}} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     <script src="https://kit.fontawesome.com/4cf720d27e.js" crossorigin="anonymous"></script>
     <script src="../javascripts/manager_js/member.js"></script>

@@ -3,6 +3,7 @@ var appdiv = new Vue({
     data: {
       events: [],
       showPopUp: false,
+      imgErr: false,
       form: {
         name: '',
         location: '',

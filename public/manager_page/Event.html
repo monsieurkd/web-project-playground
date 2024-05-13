@@ -122,13 +122,14 @@
         <hr>
         <div class="event-grid">
             <div v-for="event in events" :key="event.EventID" class="event-card" @click="directEvent(event)">
-                <img src="event-image.jpg" alt="Event Image">
+                <img src="../images/meeting.jpg" alt="Event Image" @error="imgErr = true" v-show="!imgErr">
+                <div class="fallback" v-if="imgErr"></div>
                 <div class="event-info">
                     <p class="date-time">{{event.Date}}</p>
                     <h2>{{event.Name}}</h2>   
                     <p class="location">{{event.Location}}</p>
                     <p class="followers">Participant: {{event.Participant}}</p>
-                </div>
+                </div>  
             </div>
         </div>
 
