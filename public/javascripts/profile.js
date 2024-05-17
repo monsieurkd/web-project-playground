@@ -25,7 +25,24 @@ const app = new Vue({
           }
       };
 
-      xhttp.send();
+      xhttp.send(this.user);
     },
   }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const profilePicture = document.getElementById('profilePicture');
+  const dropdownMenu = document.getElementById('dropdownMenu');
+
+  profilePicture.addEventListener('click', function () {
+      const isShown = dropdownMenu.getAttribute('data-show') === 'true';
+      dropdownMenu.setAttribute('data-show', !isShown);
+  });
+
+  // Optional: Close the dropdown when clicking outside
+  document.addEventListener('click', function (event) {
+      if (!profilePicture.contains(event.target) && !dropdownMenu.contains(event.target)) {
+          dropdownMenu.setAttribute('data-show', 'false');
+      }
+  });
 });

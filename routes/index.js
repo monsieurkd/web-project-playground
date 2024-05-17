@@ -22,5 +22,9 @@ router.get('/profile.html', function(req,res,next){
   res.render('description', {title: 'description'});
 });
 
+router.get('/admin.html', function(req,res,next){
+  res.render('description', {title: 'admin'});
+});
+
 
 module.exports = router;
