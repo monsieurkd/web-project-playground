@@ -1,13 +1,15 @@
 var express = require('express');
 var router = express.Router();
+const path = require('path');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('landingPage', { title: 'Express' });
 });
 
+
 router.get('/manager.html', function(req,res,next){
-  res.render('home', {title: 'manager'});
+  res.sendFile(path.join(__dirname, 'public', 'manager_page', 'Home.html'));
 });
 
 router.get('/event-description.html', function(req,res,next){
