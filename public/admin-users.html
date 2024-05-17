@@ -20,40 +20,45 @@
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#828282" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M20.9999 21L16.6499 16.65" stroke="#828282" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>                        
+                    </svg>
                     <input type="text" placeholder="Search">
                 </div>
             </div>
-            
+
             <div class="profile">
                 <img src="/images/meeting.jpg" alt="">
             </div>
         </div>
     </section>
 
-    <section id="menu">        
+    <section id="menu">
         <div class="items">
-            <li><a href="#">Dashboard</a></li>
-            <li class="second"><a href="#">People</a></li>
-            <li><a href="#">Manage Users</a></li>
+            <ul>
+                <li><a href="admin.html">Dashboard</a></li>
+                <li class="second"><a href="#">People</a></li>
+                <li><a href="#">Manage Users</a></li>
+            </ul>
         </div>
     </section>
 
     <section id="dashboard">
         <div class="people">
-            <dir class="board">
+            <div class="board">
                 <h3>People</h3>
-                <div class="search">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#828282" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M20.9999 21L16.6499 16.65" stroke="#828282" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>                        
-                    <input type="text" placeholder="Search by name or email">
+                <div class="people-searchdiv">
+                    <div class="search">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#828282" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M20.9999 21L16.6499 16.65" stroke="#828282" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <input type="text" placeholder="Search by name or email">
+                    </div>
+                    <div class="invite">
+                        <input type="text" placeholder="Invite by email (single/multiple allowed)">
+                        <button type="submit" class="invite-btn">+</button>
+                    </div>
                 </div>
-                <div class="invite">
-                    <input type="text" placeholder="Invite by email (single/multiple allowed)">
-                </div>
-                <table width="100%" class="table">
+                <table class="table">
                     <tr>
                         <td>Username</td>
                         <td>Name</td>
@@ -115,9 +120,8 @@
                         <td>Member</td>
                     </tr>
 
-                    </tr>
-                </table>
-            </dir>
+                    </table>
+            </div>
         </div>
     </section>
 
