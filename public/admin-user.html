@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Express</title>
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <section id="interface">
+        <div class="navigation">
+            <div class="logo">
+                <h2>Logo</h2>
+            </div>
+            <div class="n1">
+                <div class="search">
+                    <i class="far fa-search"></i>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#828282" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M20.9999 21L16.6499 16.65" stroke="#828282" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+
+            <div class="profile">
+                <img src="/images/meeting.jpg" alt="">
+            </div>
+        </div>
+    </section>
+    <div class="body-container">
+    <section id="menu">
+        <div class="items">
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="admin-people.html">People</a></li>
+                <li class="third"><a href="admin-user.html">Manage Users</a></li>
+                <li><a href="admin-branches.html">Manage Branches</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <div id="dashboard">
+        <div class="people">
+            <div class="board">
+                <h3>Manage User</h3>
+                <hr>
+                    <div class="avatar-container">
+                        <img src="avatar.jpg" alt="User Avatar" class="avatar">
+                        <div class="full-name">Full Name</div>
+                        <div class="username">@username</div>
+                        <button class="edit-btn">Edit Profile Image</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
