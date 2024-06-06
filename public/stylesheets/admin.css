@@ -339,7 +339,7 @@ body {
 
 .buttons button {
     background-color: #FFFFFF;
-    color: #black;
+    color: black;
     border: none;
     padding: 5px 10px;
     border: 1px solid #B3B3B3;
@@ -384,6 +384,7 @@ body {
     text-align: center;
     border: 1px solid #E0E0E0;
     width: 100%;
+    line-height: 25px;
 }
 
 .avatar {
@@ -425,4 +426,68 @@ body {
     background-color: #f0f0f0;
     font-size: 16px;
     line-height: 1.5;
+}
+
+.info {
+    padding: 8px 14px;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    margin-left: 100px;
+}
+
+.info2 {
+    padding: 8px 14px;
+    border: 1px solid #E0E0E0;
+    border-radius: 5px;
+    margin-left: 55px;
+}
+
+.role {
+    padding: 3px 10px;
+    margin-right: 8px;
+    border: 1px solid #E0E0E0;
+    border-radius: 7px;
+    font-size: 16px;
+}
+
+.basicinfo img {
+    width:3%;
+    height:3%;
+}
+
+.edit-btn {
+    color: #ffffff;
+    padding: 10px;
+    border: 1px solid #135D66;
+    border-radius: 20px;
+    background-color: #135D66;
+}
+
+.rvrt-btn {
+    color: #135D66;
+    padding: 10px;
+    border: 1px solid #135D66;
+    border-radius: 20px;
+    background-color: #ffffff;
+}
+
+.rvrt-bttn button:hover {
+    background-color: #135D66;
+}
+
+.edit {
+    margin-left: 20px;
+    background-color: #BDEAF8;
+    padding: 3px 10px;
+    color: white;
+    margin-right: -4px;
+    border: 1px solid #B2DCEA;
+    border-radius: 7px;
+    font-size: 16px;
+}
+
+.edit img {
+    width: 2.5%;
+    height: 2.5%;
+    margin-right: 4px;
 }
